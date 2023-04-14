@@ -20,8 +20,16 @@ export class PokemonListComponent implements OnInit {
   }
 
   getPokemons() {
-    this._apiService.getAllPokemons().subscribe(( urls: any) => {
-      this.pokemonList = urls
+    this._apiService.getAllPokemons().subscribe(( pokemon: any) => {
+      this.pokemonList = pokemon
     });
   }
+
+  /* getFavoritePokemonById(id: number) {
+    const testerPokemon = this._apiService.getFavoritePokemonById(id)
+
+    if(testerPokemon){
+      this.favoritePokemon = this._apiService.getFavoritePokemonById(id)
+    }
+  } */
 }
