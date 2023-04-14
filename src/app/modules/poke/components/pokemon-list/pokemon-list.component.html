@@ -1,0 +1,26 @@
+<H1>Listado Pokemon</H1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Tipo</th>
+      <th>Habilidades</th>
+      <th>Hp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pokemon of pokemonList">
+      <td>{{ pokemon.id }}</td>
+      <td>{{ pokemon.name }}</td>
+      <td>{{ pokemon.types }}</td>
+      <td>{{ pokemon.abilities }}</td>
+      <td>{{ pokemon.stats }}</td>
+      <td>
+        <img [src]="pokemon.sprites.front_default" alt="Imagen de {{ pokemon.name }}">
+      </td>
+    </tr>
+  </tbody>
+</table>
+
