@@ -11,7 +11,6 @@ export class ApiService {
   private readonly http = inject(HttpClient);
   private apiUrl = 'https://pokeapi.co/api/v2/pokemon'
 
-  pokemonList: IPokemonDetails[]= []
 
   getAllPokemons(): Observable<IPokemonDetails[]> {
     const pokemonList: IPokemonDetails[] = [];

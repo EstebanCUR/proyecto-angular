@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { PokeModule } from './modules/poke/poke.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { PokeModule } from './modules/poke/poke.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    PokeModule
+    PokeModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

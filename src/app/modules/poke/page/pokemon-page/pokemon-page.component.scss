@@ -1,0 +1,13 @@
+@use '../../../../../assets/_mixin';
+@use '../../../../../assets/_reset';
+
+.pokemon-section{
+  @include mixin.flexbox(row, center, center);
+  gap: 200px;
+  &__list{
+    width: 50%;
+  }
+  &__detail{
+    width: 50%;
+  }
+}
