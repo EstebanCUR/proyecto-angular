@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable, Subject, forkJoin, map, switchMap } from 'rxjs';
+import { Observable, Subject, forkJoin, map, switchMap } from 'rxjs';
 import { IGeneralPokemon, IPokemonDetails, IPokemonPreview } from '../../../core/models/pokemon.interface';
 
 @Injectable({
@@ -10,14 +10,13 @@ export class ApiService {
 
   private readonly http = inject(HttpClient);
   private apiUrl = 'https://pokeapi.co/api/v2/pokemon'
+  private pokemonDetail = new Subject<IPokemonDetails>();
 
   pokemonList: IPokemonDetails[] = [];
+  pokemonDetail$ = this.pokemonDetail.asObservable();
 
-  private favoritePokemon = new Subject<IPokemonDetails>();
-  favoritePokemon$ = this.favoritePokemon.asObservable();
 
   getAllPokemons(): Observable<IPokemonDetails[]> {
-    /* const pokemonList: IPokemonDetails[] = []; */
 
     return this.http.get<IGeneralPokemon>(`${this.apiUrl}`).pipe(
       switchMap((response) => {
@@ -44,15 +43,9 @@ export class ApiService {
     );
   }
 
-  setFavoritePokemon(pokemon: IPokemonDetails){
-    this.favoritePokemon.next(pokemon);
-    /* this.favoritePokemon = pokemon; */
-    console.log(pokemon);
-  }
-
   getPokemonById(id: number) {
-    return this.pokemonList.find((pokemon: IPokemonDetails) => {
-      return pokemon.id === id
+    this.pokemonList.find((pokemon: IPokemonDetails) => {
+      pokemon.id === id && this.pokemonDetail.next(pokemon)
     })
   }
 

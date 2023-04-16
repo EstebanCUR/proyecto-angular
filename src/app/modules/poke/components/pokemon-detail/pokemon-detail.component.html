@@ -1,3 +1,30 @@
-<div class="rellenar">
-  <h1>AQUI ESTARAN LOS DETALLES</h1>
-</div>
+<section *ngIf="pokemonSelected">
+  <header>
+    <h2>Caracteristicas de: {{pokemonSelected.name | uppercase}}</h2>
+  </header>
+  <div>
+    <picture>
+      <img [src]="pokemonSelected.sprites.front_default" alt="">
+    </picture>
+    <div>
+      <h3>Pokedex</h3>
+      <span>{{ pokemonSelected.id }}</span>
+      <h3>Nombre</h3>
+      <span>{{ pokemonSelected.name | uppercase }}</span>
+      <h3>Tipo</h3>
+      <ng-container *ngFor="let type of pokemonSelected.types">
+        <span>{{ type.type.name | uppercase }}</span>
+      </ng-container>
+      <h3>Habilidades</h3>
+      <ng-container *ngFor="let ability of pokemonSelected.abilities">
+        <span>{{ ability.ability.name | uppercase }}</span>
+      </ng-container>
+      <h3>Stats</h3>
+      <div *ngFor="let stat of pokemonSelected.stats">
+        <span>{{ stat.stat.name | uppercase }}: </span>
+        <span>{{ stat.base_stat }}</span>
+      </div>
+    </div>
+  </div>
+
+</section>

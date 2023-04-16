@@ -1,6 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { IPokemonDetails } from 'src/app/core/models/pokemon.interface';
 import { ApiService } from 'src/app/modules/poke/services/api.service';
+import { SearchService } from '../../services/search.service';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -9,14 +10,16 @@ import { ApiService } from 'src/app/modules/poke/services/api.service';
 })
 export class PokemonListComponent implements OnInit {
 
+  private _apiService = inject(ApiService)
+  private _searchService = inject(SearchService)
+
   pokemonList: IPokemonDetails[]= []
   currentPage: number = 1
   search: string = ''
 
-  private _apiService = inject(ApiService)
-
   ngOnInit(): void {
     this.getPokemons()
+    this.getSearch()
   }
 
   getPokemons() {
@@ -25,11 +28,9 @@ export class PokemonListComponent implements OnInit {
     });
   }
 
-  /* getFavoritePokemonById(id: number) {
-    const testerPokemon = this._apiService.getFavoritePokemonById(id)
-
-    if(testerPokemon){
-      this.favoritePokemon = this._apiService.getFavoritePokemonById(id)
-    }
-  } */
+  getSearch() {
+    this._searchService.searchPokemon$.subscribe(pokemon => {
+      this.search = pokemon
+    })
+  }
 }

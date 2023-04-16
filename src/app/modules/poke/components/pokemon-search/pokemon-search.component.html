@@ -1,2 +1,1 @@
-<input type="text" class="form-control my-5" placeholder="Buscar pokemon">
-
+<input type="text" [formControl]="searchControl" (keyup)="inputChange(searchControl.value)" class="form-control my-5" placeholder="Buscar pokemon">

@@ -9,6 +9,8 @@ import { PokemonSearchComponent } from './components/pokemon-search/pokemon-sear
 
 import { PokeRoutingModule } from './poke-routing.module';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { SearchPipe } from './pipes/search.pipe';
 
 
@@ -19,12 +21,13 @@ import { SearchPipe } from './pipes/search.pipe';
     PokemonDetailComponent,
     PokemonPageComponent,
     PokemonSearchComponent,
-    SearchPipe
+    SearchPipe,
   ],
   imports: [
     CommonModule,
     PokeRoutingModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ReactiveFormsModule
   ],
   exports: [
     PokemonPageComponent

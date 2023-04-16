@@ -1,8 +1,13 @@
-<td>{{ pokemon.id }}</td>
-<td>{{ pokemon.name }}</td>
-<td>
-  <img [src]="pokemon.sprites.front_default" alt="Imagen de {{ pokemon.name }}">
-</td>
-<td>
-  <button (click)="favoritePokemon(pokemon)">Favorito</button>
-</td>
+<tr>
+  <td>{{ pokemon.id }}</td>
+  <td>{{ pokemon.name }}</td>
+  <td>
+    <img [src]="pokemon.sprites.front_default" alt="Imagen de {{ pokemon.name }}">
+  </td>
+  <td>
+    <button class="btn btn-success" type="button" (click)="favoritePokemon(pokemon)">Seleccionar</button>
+  </td>
+  <td>
+    <button class="btn btn-info" type="button" (click)="getDetails(pokemon)">Caracteristicas</button>
+  </td>
+</tr>
