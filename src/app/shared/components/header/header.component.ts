@@ -15,6 +15,8 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void{
     this.getFavoritePokemon()
+    const favoriteStorage = localStorage.getItem('favoritePokemon')
+    this.favoritePokemon = favoriteStorage && JSON.parse(favoriteStorage)
   }
 
   getFavoritePokemon(){

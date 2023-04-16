@@ -8,15 +8,18 @@ import { ApiService } from '../../services/api.service';
   templateUrl: './pokemon-item.component.html',
   styleUrls: ['./pokemon-item.component.scss']
 })
-export class PokemonItemComponent {
+export class PokemonItemComponent{
+
 
   private _favoriteService = inject(FavoriteService);
   private _apiService = inject(ApiService)
 
   @Input() pokemon!: IPokemonDetails;
 
-  favoritePokemon(pokemon: IPokemonDetails) {
+
+  setFavoritePokemon(pokemon: IPokemonDetails) {
     this._favoriteService.setFavoritePokemon(pokemon);
+    localStorage.setItem('favoritePokemon', JSON.stringify(pokemon))
   }
 
   getDetails(pokemon: IPokemonDetails){
