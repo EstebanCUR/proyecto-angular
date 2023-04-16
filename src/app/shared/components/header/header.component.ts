@@ -1,5 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { IPokemonDetails } from 'src/app/core/models/pokemon.interface';
+import { ApiService } from 'src/app/modules/poke/services/api.service';
 import { FavoriteService } from 'src/app/modules/poke/services/favorite.service';
 
 @Component({
@@ -10,6 +11,7 @@ import { FavoriteService } from 'src/app/modules/poke/services/favorite.service'
 export class HeaderComponent implements OnInit {
 
   private _favoriteService = inject(FavoriteService);
+  private _apiService = inject(ApiService)
 
   favoritePokemon : IPokemonDetails | undefined
 
@@ -23,6 +25,10 @@ export class HeaderComponent implements OnInit {
     this._favoriteService.favoritePokemon$.subscribe(pokemon =>{
       this.favoritePokemon = pokemon
     })
+  }
+
+  getDetails(pokemon: IPokemonDetails){
+    this._apiService.getPokemonById(pokemon.id)
   }
 
 }

@@ -3,9 +3,10 @@
     <div class="nav__logo-container">
       <a href="#"><img class="nav__logo" src="../../../../assets/images/logo.png" alt="logo Pokemon"></a>
     </div>
-    <div class="nav__favorite-pokemon">
+    <div *ngIf="favoritePokemon" class="nav__favorite-pokemon">
       <h3>Pokemon Favorito</h3>
-      <span *ngIf="favoritePokemon">{{favoritePokemon.name}}</span>
+      <span >{{favoritePokemon.name}}</span>
+      <button type="button" (click)="getDetails(favoritePokemon)" class="btn btn-warning">Ver</button>
     </div>
   </nav>
 </header>
