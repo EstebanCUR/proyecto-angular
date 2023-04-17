@@ -3,6 +3,8 @@
 @use '../../../../../assets/_variables';
 
 .pokemon-list{
+  width: 95%;
+  height: calc(100vh - 272px);
   &__table{
     width: 100%;
     color: white;
