@@ -1,0 +1,41 @@
+@use '../../../../../assets/_mixin';
+@use '../../../../../assets/_reset';
+@use '../../../../../assets/_variables';
+
+.pokemon-list{
+  &__table{
+    width: 100%;
+    color: white;
+  }
+  &__text-container{
+    @include mixin.flexbox(row, center, start);
+    gap: 10px;
+    margin-block-end: 32px;
+  }
+  &__pokeball{
+    width: 3.5em;
+  }
+  &__title{
+    font-size: 2.5rem;
+    color:variables.$white;
+  }
+  &__text{
+    color: variables.$white;
+  }
+}
+
+.pokemon-list__pagination{
+  text-align: center;
+}
+
+
+/* Ngx Pagination class */
+
+::ng-deep .ngx-pagination li:not(.disabled) a {
+  color: #fff;
+  background-color: transparent;
+  border: 1px solid transparent;
+  margin-right: 5px;
+  font-weight: bolder;
+}
+

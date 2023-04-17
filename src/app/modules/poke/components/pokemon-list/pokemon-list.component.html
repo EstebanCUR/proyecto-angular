@@ -1,24 +1,23 @@
-<h1>Listado Pokedex</h1>
+<section class="pokemon-list">
+  <div class="pokemon-list__text-container">
+    <img class="pokemon-list__pokeball" src="../../../../../assets/images/pokeball.png" alt="Imagen de pokeball">
+    <div>
+      <h2 class="pokemon-list__title">Listado Pokémons</h2>
+      <p class="pokemon-list__text">Selecciona el Pokémon que desees </p>
+    </div>
+  </div>
 
-<div class="table-responsive">
-<table class="table">
-  <thead>
-    <tr>
-      <th>Nº Pokédex</th>
-      <th>Nombre</th>
-      <th>Pokéimagen</th>
-      <th>Favorito</th>
-      <th>Ver detalle</th>
-    </tr>
-  </thead>
-  <tbody >
-      <ng-container *ngFor="let pokemon of pokemonList | paginate: {itemsPerPage: 5, currentPage: currentPage} | search: search">
+  <table class="pokemon-list__table">
+    <tbody>
+      <ng-container
+        *ngFor="let pokemon of pokemonList | paginate: {itemsPerPage: 5, currentPage: currentPage} | search: search">
         <app-pokemon-item [pokemon]="pokemon"></app-pokemon-item>
       </ng-container>
-  </tbody>
-</table>
-</div>
+    </tbody>
+  </table>
 
-<div class="text-center">
-  <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
-</div>
+  <div class="pokemon-list__pagination">
+    <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+  </div>
+</section>
+

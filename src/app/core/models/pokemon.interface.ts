@@ -25,7 +25,7 @@ export interface Type {
 }
 
 export interface Ability {
-  ability:   Species;
+  ability: Species;
 }
 
 export interface Stat {
@@ -34,9 +34,11 @@ export interface Stat {
 }
 
 export interface Species {
-  name: string;
+    name: string;
 }
 
 export interface Sprites {
-  front_default:      string;
+  front_default: string;
+
 }
+

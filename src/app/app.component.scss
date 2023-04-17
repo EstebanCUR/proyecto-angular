@@ -1,6 +1,13 @@
 @use '../assets/_reset';
 
-.container-private{
-  margin: 0 auto;
-  width: 96%;
+html, body{
+  font-family: 'Montserrat', sans-serif;;
+}
+
+.bg-page {
+  background-image: linear-gradient(#181818c5, #505050), url('../assets/images/pokebg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: calc(100vh - 150px);
 }

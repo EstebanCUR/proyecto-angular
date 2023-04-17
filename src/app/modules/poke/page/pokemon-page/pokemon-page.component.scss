@@ -3,7 +3,7 @@
 
 .pokemon-section{
   @include mixin.flexbox(row, center, center);
-  gap: 200px;
+  gap: 40px;
   &__list{
     width: 50%;
   }
