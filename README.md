@@ -29,4 +29,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 # ptecnica-angular-defon
 Desarrollo de prueba tecnica para Empresa Defontana, consta de consumo API multiple con optimizacion de rendimiento para este mismo, paginación y buscador
 
-#Proyecto finalizado sin responsive design
+#Proyecto finalizado con futuras mejoras e implementaciones
