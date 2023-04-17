@@ -10,7 +10,7 @@
   &__text-container{
     @include mixin.flexbox(row, center, start);
     gap: 10px;
-    margin-block-end: 32px;
+    margin-block-end: 2em;
   }
   &__pokeball{
     width: 3.5em;
@@ -35,7 +35,7 @@
   color: #fff;
   background-color: transparent;
   border: 1px solid transparent;
-  margin-right: 5px;
+  margin-right: 0.4em;
   font-weight: bolder;
 }
 

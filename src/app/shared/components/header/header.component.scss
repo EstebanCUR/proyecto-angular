@@ -5,9 +5,9 @@
 
 .header{
   width: 100%;
-  background-color: #670DB0;
+  background-color: variables.$purple;
   height: 150px;
-  box-shadow: 0px 3px 54px -18px rgba(0, 0, 0, 0.75);
+  box-shadow:variables.$boxShadow;
   .nav{
     @include mixin.flexbox(row, center, space-between);
     width: 100%;
@@ -44,15 +44,14 @@
     &__favorite-pokemon{
       @include mixin.flexbox(row, center, space-between);
       cursor: pointer;
-      background-color: #e7e7e7;
       border-radius: 25px;
-      box-shadow: 0px 3px 54px -18px rgba(0, 0, 0, 0.75);
+      box-shadow: variables.$boxShadow;
       width: 40em;
       margin-inline-end: 15em;
       overflow: hidden;
       height: 100%;
       position: relative;
-      background: linear-gradient(#ffffffd3, #dddddd)
+      background: variables.$bgFavoritePokemon;
     }
     &__texts-container{
       margin-inline-start: 4em;
@@ -73,6 +72,3 @@
   }
 }
 
-.btn{
-  padding: 5px 10px;
-}

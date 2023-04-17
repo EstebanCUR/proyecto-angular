@@ -1,5 +1,6 @@
 @use '../../../../../assets/_mixin';
 @use '../../../../../assets/_reset';
+@use '../../../../../assets/_variables';
 
 .input{
   margin-block: 2em;
@@ -9,5 +10,5 @@
   border-radius: 50px;
   border: none;
   height: 2.5em;
-  box-shadow: 0px 3px 54px -18px rgba(0, 0, 0, 0.75);
+  box-shadow: variables.$boxShadow;
 }
