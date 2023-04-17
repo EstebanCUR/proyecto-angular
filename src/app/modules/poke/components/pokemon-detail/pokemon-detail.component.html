@@ -13,14 +13,14 @@
 
       <div class="section-card__details-container">
         <div class="section-card__type-container">
-          <h3 class="section-card__detail-title">Tipo</h3>
+          <h3 class="section-card__detail-title">Type</h3>
           <ng-container *ngFor="let type of pokemonSelected.types">
             <span class="section-card__span section-card__details-text--color">{{ type.type.name | uppercase }}</span>
           </ng-container>
         </div>
 
         <div class="section-card__abilities-container">
-          <h3 class="section-card__detail-title">Habilidades</h3>
+          <h3 class="section-card__detail-title">Abilities</h3>
           <ng-container *ngFor="let ability of pokemonSelected.abilities">
             <span class="section-card__span section-card__details-text--color">{{ ability.ability.name | uppercase }}</span>
           </ng-container>
